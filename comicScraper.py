@@ -229,6 +229,8 @@ if __name__ == "__main__":
     parser.add_argument('URL', help='The url of the comic to download')
     parser.add_argument('-f', '--folder', help='The folder to save the comic in')
     parser.add_argument('-v', '--version', help='Display the current version of the script', action='version', version=VERSION)
+    parser.add_argument('-s', '--start', help='Download issues starting here, inclusive')
+    parser.add_argument('-e', '--end', help='Download issues ending here, inclusive')
     parser.add_argument('-c', '--complete', help='Download the entire comic into one folder. Omit this argument to download each issue into its own folder', action='store_true')
 
     # ensure that no args is a help call
@@ -236,6 +238,13 @@ if __name__ == "__main__":
         parser.print_help(sys.stderr)
         sys.exit(1)
     arguments = parser.parse_args()
+
+    # TODO: figure out how to pass this around to limit downloads
+    # check if the user wants to download a selection of issues
+    if arguments.start:
+        startIssue = arguments.start
+    if arguments.end:
+        endIssue = arguments.end
 
     # set variables from arguments
     startURL = arguments.URL
