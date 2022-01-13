@@ -1,3 +1,9 @@
+# This repo has been archived 
+# Project has been moved to [team-hunting/ComicDownloader](https://github.com/team-hunting/ComicDownloader)
+# All updates will be posted there
+
+---
+
 # ComicDownloader
 
 Downloads Comics from readcomiconline.li
